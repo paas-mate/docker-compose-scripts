@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  es-kibana:
+    image: ttbb/integrate:elasticsearch-kibana
+    container_name: es-kibana
+    ports:
+      - 5601:5601
+      - 9200:9200
+  filebeat:
+    image: ttbb/filebeat:nake
+    container_name: filebeat
+    command: tail -f /dev/null
